@@ -1,0 +1,39 @@
+Context
+
+The H-1B is an employment-based, non-immigrant visa category for temporary foreign workers in the United States. For a foreign national to apply for H1-B visa, an US employer must offer a job and petition for H-1B visa with the US immigration department. This is the most common visa status applied for and held by international students once they complete college/ higher education (Masters, PhD) and work in a full-time position.
+
+The Office of Foreign Labor Certification (OFLC) generates program data that is useful information about the immigration programs including the H1-B visa. The disclosure data updated annually is available at this link.
+
+However, the raw data available is messy and might not be suitable for rapid analysis. A set of data transformations were performed making the data more accessible for quick exploration. To learn more about the transformations performed, please read this blog and R Notebook.
+
+Content
+
+The columns in the dataset include:
+
+UPDATE: Credit: Jagan Gurumurthy
+
+The CASE_STATUS field denotes the status of the application after LCA processing. Certified applications are filed with USCIS for H-1B approval. CASE_STATUS: CERTIFIED does not mean the applicant got his/her H-1B visa approved, it just means that he/she is eligible to file an H-1B. For more details on this update, read this discussion.
+
+CASE_STATUS: Status associated with the last significant event or decision. Valid values include “Certified,” “Certified-Withdrawn,” Denied,” and “Withdrawn”.
+EMPLOYER_NAME: Name of employer submitting labor condition application.
+SOC_NAME: Occupational name associated with the SOC_CODE. SOC_CODE is the occupational code associated with the job being requested for temporary labor condition, as classified by the Standard Occupational Classification (SOC) System.
+JOB_TITLE: Title of the job
+FULL_TIME_POSITION: Y = Full Time Position; N = Part Time Position
+PREVAILING_WAGE: Prevailing Wage for the job being requested for temporary labor condition. The wage is listed at annual scale in USD. The prevailing wage for a job position is defined as the average wage paid to similarly employed workers in the requested occupation in the area of intended employment. The prevailing wage is based on the employer’s minimum requirements for the position.
+YEAR: Year in which the H-1B visa petition was filed
+WORKSITE: City and State information of the foreign worker's intended area of employment
+lon: longitude of the Worksite
+lat: latitude of the Worksite
+Acknowledgements
+
+The Office of Foreign Labor Certification (OFLC) for publishing the annual disclosure data with the purpose of performing in-depth longitudinal research and analysis.
+Transformations performed on raw dataset are described in this GitHub repo, particularly this R Notebook.
+Inspiration
+
+Is the number of petitions with Data Engineer job title increasing over time? Which part of the US has the most Hardware Engineer jobs? Which industry has the most number of Data Scientist positions? Which employers file the most petitions each year?
+
+More Information
+
+About LCA Processing: http://redbus2us.com/what-is-h1b-lca-why-file-it-salary-processing-times-dol/
+Raw dataset description: https://www.foreignlaborcert.doleta.gov/docs/Performance_Data/Disclosure/FY15-FY16/H-1B_FY16_Record_Layout.pdf
+H-1B process: http://www.immi-usa.com/h1b-application-process-step-by-step-guide/
